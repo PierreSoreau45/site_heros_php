@@ -1,5 +1,6 @@
 <?php
-
+//Tableau qui décrit les différentes possibilités d'histoire du jeu après que l'utilisateur 
+//ait choisi le chemin qu'il veut prendre au cinquième km en prenant en compte le choix de la vitesse de course initiale
 $resultats = [
     [
         "type_course" => "speed",
@@ -92,11 +93,14 @@ $resultats = [
     ]
 ];
 session_start();
-$choix_1=$_SESSION["choix_1"];
-$path=$_GET["choix_2"];
+$choix_1=$_SESSION["choix_1"];//valeur enregistrée dans la session réutilisée et mise dans la variable choix_1
+$choix_2=$_GET["choix_2"];
+
+//On parcourt le tableau $resultats  et on affiche le contenu $resultat["histoire"] seulement si le contenu $resultat["type_course"]===$choix_1 et $resultat["chemin"]===$choix_2
 foreach ($resultats as $resultat) {
-    if ($resultat["type_course"]===$choix_1 && $resultat["chemin"]===$path) {
+    if ($resultat["type_course"]===$choix_1 && $resultat["chemin"]===$choix_2) {
         echo $resultat["histoire"];
     }
 }
 ?>
+<a href="index.php">Relancer le jeu</a>

@@ -1,0 +1,15 @@
+<main>
+    <?php
+    //visuel paragraphe d'introduction du jeu + formulaire pour le choix 1. isset est une fonction qui permet de vérifier si une valeur existe
+    if (!isset($_GET['page'])) {
+        require 'templates/partials/introduction.html';
+    }
+    // visuel paragraphe explication du choix 1 + formulaire pour le choix 2 
+    elseif ($_GET['page'] === 'etape_1') {
+        require 'templates/partials/speed.phtml';
+    }
+    // visuel paragraphe fin du jeu + lien pour recommencer le jeu
+    elseif ($_GET['page'] === 'etape_2') {
+        require 'templates/partials/path.phtml';
+    } ?>
+</main>

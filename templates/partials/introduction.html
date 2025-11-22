@@ -1,0 +1,16 @@
+<p>Vous souhaitez faire un 10km en courant en moins d'1h.</p>
+<!--Formulaire pour réaliser la première étape du jeu-->
+<form id="searchForm" method="get" action="index.php">
+    <fieldset>
+        <input type="hidden" name="page" value="etape_1"><!--valeur qui sera récupérée avec un get et utilisée pour pouvoir afficher uniquement la page nécessaire dans l'index-->
+        <label for="choix_1">Quelle stratégie de course choisissez-vous?</label><br>
+        <select name="choix_1">
+            <option value="speed">courrir vite</option>
+            <option value="fundamental_endurance">courrir en endurance fondamentale</option>
+            <option value="slow">courrir lentement</option>
+        </select>
+        <fieldset>
+            <fieldset>
+                <button type="submit">Lancer la recherche</button>
+            </fieldset>
+</form>
